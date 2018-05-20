@@ -20,12 +20,12 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('profilePic');
-            $table->boolean('accepted');
+            $table->boolean('accepted')->default(false);
             $table->string('accountRole');
-            $table->double('AvgRating');
-            $table->string('description');
-            $table->boolean('admin');
-            $table->boolean('isSuperUser');
+            $table->double('AvgRating')->default(0.0);
+            $table->text('description')->default(null);
+            $table->boolean('admin')->default(false);
+            $table->boolean('isSuperUser')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
