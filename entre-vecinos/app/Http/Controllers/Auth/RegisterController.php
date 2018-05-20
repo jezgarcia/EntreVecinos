@@ -69,9 +69,10 @@ class RegisterController extends Controller
             'lastName' => $data['lastName'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'profilePic' => null,
+            'profilePic' => "none",
             'accountRole' => $data['accountRole'],
-            'avgRating' => null,
+            'avgRating' => 0.0,
+            'description' => null,
             'admin' => false, //Default to false, Super user can change this
             'isSuperUser' => false, //Only Super User can change this
         ]);
